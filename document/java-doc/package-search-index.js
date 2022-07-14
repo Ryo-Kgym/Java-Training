@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"training","h":"","u":""},{"l":"training.stream.work1","h":"","u":""},{"l":"すべてのパッケージ","h":"","u":"allpackages-index.html"}]
