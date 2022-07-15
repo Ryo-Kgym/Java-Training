@@ -33,7 +33,7 @@ class IntAggregatorTest {
                 Arguments.of(
                         "リストが空でない場合",
                         IntAggregator.builder()
-                                .intList(List.of(-1, 2, -6, 4, 7, 1, 4))
+                                .numList(List.of(-1, 2, -6, 4, 7, 1, 4))
                                 .build(),
                         Optional.of(7)
                 )
@@ -48,7 +48,7 @@ class IntAggregatorTest {
                 .append(9)
                 .append(3)
                 .build();
-        var actual = src.getIntList();
+        var actual = src.getNumList();
         var expected = List.of(2, -4, 9, 3);
 
         assertThat(actual, is(expected));

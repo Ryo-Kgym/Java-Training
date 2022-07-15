@@ -6,6 +6,7 @@ public interface Aggregator<T> {
 
     /**
      * リストの中で最小の値を返します。
+     * 当該データが存在しない場合は、NULLを返します。
      *
      * @return 最小値
      */
@@ -13,6 +14,7 @@ public interface Aggregator<T> {
 
     /**
      * リストの中で最大の値を返します。
+     * 当該データが存在しない場合は、NULLを返します。
      *
      * @return 最大値
      */
@@ -20,6 +22,7 @@ public interface Aggregator<T> {
 
     /**
      * リストの合計値を返します。
+     * 当該データが存在しない場合は、NULLを返します。
      *
      * @return 合計値
      */
@@ -27,6 +30,7 @@ public interface Aggregator<T> {
 
     /**
      * リストの平均値を返します。
+     * 当該データが存在しない場合は、NULLを返します。
      *
      * @return 平均値
      */

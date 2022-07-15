@@ -20,10 +20,11 @@ import java.util.Optional;
 @Builder
 @Value
 public class IntAggregator implements NumberAggregator<Integer> {
-    private List<Integer> intList;
+    private List<Integer> numList;
 
     @Override
     public Optional<Integer> findMinimum() {
+        // TODO 実装とテスト
         return Optional.empty();
     }
 
@@ -32,7 +33,7 @@ public class IntAggregator implements NumberAggregator<Integer> {
         // TODO for文からStreamへの書き換え
 
         Integer retInt = null;
-        for (var i : intList) {
+        for (var i : numList) {
             if (retInt == null) {
                 retInt = i;
                 continue;
@@ -46,23 +47,25 @@ public class IntAggregator implements NumberAggregator<Integer> {
 
     @Override
     public Optional<Integer> findTotal() {
+        // TODO 実装とテスト
         return Optional.empty();
     }
 
     @Override
     public Optional<Integer> findAverage() {
+        // TODO 実装とテスト
         return Optional.empty();
     }
 
     static class IntAggregatorBuilder {
-        private List<Integer> intList = new ArrayList<>();
+        private List<Integer> numList = new ArrayList<>();
 
         static IntAggregatorBuilder builder() {
             return new IntAggregatorBuilder();
         }
 
         IntAggregatorBuilder append(Integer... ints) {
-            Arrays.stream(ints).sequential().forEach(intList::add);
+            Arrays.stream(ints).sequential().forEach(numList::add);
             return this;
         }
     }
