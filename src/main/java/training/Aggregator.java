@@ -1,5 +1,7 @@
 package training;
 
+import java.util.Optional;
+
 public interface Aggregator<T> {
 
     /**
@@ -7,26 +9,26 @@ public interface Aggregator<T> {
      *
      * @return 最小値
      */
-    T findMinimum();
+    Optional<T> findMinimum();
 
     /**
      * リストの中で最大の値を返します。
      *
      * @return 最大値
      */
-    T findMaximum();
+    Optional<T> findMaximum();
 
     /**
      * リストの合計値を返します。
      *
      * @return 合計値
      */
-    T findTotal();
+    Optional<T> findTotal();
 
     /**
      * リストの平均値を返します。
      *
      * @return 平均値
      */
-    T findAverage();
+    Optional<T> findAverage();
 }

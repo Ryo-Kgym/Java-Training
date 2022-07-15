@@ -7,6 +7,7 @@ import training.NumberAggregator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * 整数リストを使った集計をするクラスです。
@@ -22,12 +23,12 @@ public class IntAggregator implements NumberAggregator<Integer> {
     private List<Integer> intList;
 
     @Override
-    public Integer findMinimum() {
-        return null;
+    public Optional<Integer> findMinimum() {
+        return Optional.empty();
     }
 
     @Override
-    public Integer findMaximum() {
+    public Optional<Integer> findMaximum() {
         // TODO for文からStreamへの書き換え
 
         Integer retInt = null;
@@ -40,17 +41,17 @@ public class IntAggregator implements NumberAggregator<Integer> {
                 retInt = i;
             }
         }
-        return retInt;
+        return Optional.ofNullable(retInt);
     }
 
     @Override
-    public Integer findTotal() {
-        return null;
+    public Optional<Integer> findTotal() {
+        return Optional.empty();
     }
 
     @Override
-    public Integer findAverage() {
-        return null;
+    public Optional<Integer> findAverage() {
+        return Optional.empty();
     }
 
     static class IntAggregatorBuilder {

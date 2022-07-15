@@ -6,6 +6,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -15,7 +16,7 @@ class IntAggregatorTest {
 
     @ParameterizedTest(name = "case {index}: {0}")
     @MethodSource("getMaxProvider")
-    void getMax(String caseName, IntAggregator src, Integer expected) {
+    void getMax(String caseName, IntAggregator src, Optional<Integer> expected) {
         var actual = src.findMaximum();
 
         assertThat(actual, is(expected));
@@ -27,14 +28,14 @@ class IntAggregatorTest {
                         "リストが空の場合",
                         IntAggregator.builder()
                                 .build(),
-                        null
+                        Optional.empty()
                 ),
                 Arguments.of(
                         "リストが空でない場合",
                         IntAggregator.builder()
                                 .intList(List.of(-1, 2, -6, 4, 7, 1, 4))
                                 .build(),
-                        7
+                        Optional.of(7)
                 )
         );
     }
